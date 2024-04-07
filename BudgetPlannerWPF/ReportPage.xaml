@@ -1,0 +1,24 @@
+﻿<Page x:Class="BudgetPlannerWPF.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BudgetPlannerWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="434.04" d:DesignWidth="533.333333333333"
+      Title="ReportPage">
+
+    <Grid Background="#FFCABBD7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Foreground="#FF280835">List of expenses</Label>
+        <ListBox x:Name="lstExpenses" Margin="40,40,40,132" Grid.RowSpan="2"/>
+
+    </Grid>
+</Page>
