@@ -5,15 +5,11 @@ namespace BudgetPlannerWPF.Code
 {
     public abstract class Expense
     {
-        /* Region code adapted from:
-         * https://stackoverflow.com/questions/21940917/more-elegant-way-to-write-code-section-dividers-in-c
-         * User answered:
-         * https://stackoverflow.com/users/1715579/p-s-w-g
-         * Accessed 9 May 2022 */
+        
         #region Inherited Fields
         public decimal GrossIncome { get; set; }
         public decimal TaxDeduct { get; set; }
-        //Expenses array
+        //Expenses
         public List<KeyValuePair<decimal, string>> namedExpenses;
         public decimal AvailableMoney { get; set; }
         #endregion
@@ -23,11 +19,7 @@ namespace BudgetPlannerWPF.Code
         {
             GrossIncome = gIncome;
             TaxDeduct = tDeduct;
-            /* Key-Value pair list from:
-             * https://stackoverflow.com/questions/18801466/key-value-pair-list
-             * User answered:
-             * https://stackoverflow.com/users/1906557/i4v
-             * Accessed 3 June 2022 */
+            
             namedExpenses = new List<KeyValuePair<decimal, string>>() {
                 new KeyValuePair<decimal, string> (f, "Fodds: "),
                 new KeyValuePair<decimal, string> (c, "Clothes: "),
@@ -36,13 +28,11 @@ namespace BudgetPlannerWPF.Code
                 new KeyValuePair<decimal, string> (e, "Entertainment: ")
             };
         }
-        /* Format code adapted from:
-         * https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-6.0
-         * Accessed 9 May 2022 */
+
         public static string FormatPrice(decimal price) => "R" + string.Format("{0:N2}", price);
         public decimal GetExpenses()
         {
-            //Return total of expenses in namedExpenses
+            // total of expenses 
             decimal total = 0;
             foreach (var item in namedExpenses)
             {

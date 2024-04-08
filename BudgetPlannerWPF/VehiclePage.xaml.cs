@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 
 namespace BudgetPlannerWPF
 {
-    /// <summary>
-    /// Interaction logic for VehiclePage.xaml
-    /// </summary>
+   
     public partial class VehiclePage : Page
     {
         public VehiclePage()
         {
             InitializeComponent();
-            //Populate text boxes with any previously entered data
+            //Populate text fields with any previously supplied data
             if (!MainWindow.model.Equals("") && !MainWindow.make.Equals("") && MainWindow.vPrice != 0 && MainWindow.vDeposit != 0 && MainWindow.vInterest != 0 && MainWindow.vInsurance != 0)
             {
                 txbMake.Text = MainWindow.make;
@@ -97,11 +95,7 @@ namespace BudgetPlannerWPF
             }
             else
             {
-                /* Brush Colour from:
-                * https://stackoverflow.com/questions/979876/set-background-color-of-wpf-textbox-in-c-sharp-code
-                * User answered:
-                * https://stackoverflow.com/users/703717/danield
-                * Accessed 29 June 2022*/
+                
                 window.btnVehicle.Background = (Brush)MainWindow.bc.ConvertFrom("white");
                 window.btnReport.IsEnabled = false;
             }

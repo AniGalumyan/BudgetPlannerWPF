@@ -12,7 +12,8 @@ namespace BudgetPlannerWPF.Code
         public decimal Interest
         {
             get => interest;
-            //Ask for interest as percentage, convert to decimal for calculations
+            //Prompt for interest rate as a percentage and convert it to decimal format for computations.
+
             set => interest = value / 100;
         }
         public int RepayMonths { get; set; }
@@ -20,7 +21,7 @@ namespace BudgetPlannerWPF.Code
         #endregion
 
         #region Methods
-        public HomeLoan(decimal pPrice, decimal deposit, decimal interest, int rMonths, decimal gIncome, decimal tDeduct, decimal groceries, decimal waterLights, decimal travel, decimal phone, decimal other) : base(gIncome, tDeduct, groceries, waterLights, travel, phone, other)
+        public HomeLoan(decimal pPrice, decimal deposit, decimal interest, int rMonths, decimal gIncome, decimal tDeduct, decimal f, decimal c, decimal t, decimal u, decimal e) : base(gIncome, tDeduct, f, c, t, u, e)
         {
             PurchasePrice = pPrice;
             Deposit = deposit;

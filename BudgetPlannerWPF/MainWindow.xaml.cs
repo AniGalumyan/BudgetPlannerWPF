@@ -27,20 +27,20 @@ namespace BudgetPlannerWPF
         public static decimal rAmount;
         public static decimal pPrice, deposit, interest;
         public static int rMonths;
-        //All Expenses
+        //Total Expenses
         public static decimal expenseTotal, limit;
-        //Used to not spam user with warnings continuously
+        //warnings
         public static bool limitReached = false;
         //Vehicle
         public static string model = "", make = "";
         public static decimal vPrice, vDeposit, vInterest, vInsurance;
 
-        //User Objects
+        // Objects
         public static HomeLoan? hl;
         public static Rent? r;
         public static Vehicle? v;
 
-        //Error Messages
+        //ErrorS
         public static string strMessage = "Please enter a value.";
         public static string decMessage = "Input must contain numbers and decimals only.";
 
@@ -62,7 +62,7 @@ namespace BudgetPlannerWPF
 
         public void ResetSelections()
         {
-            //Ensure only the selected page is highlighted when switching to a new page
+            //'Make sure that only the currently selected page is highlighted upon switching to a different page.'
             btnIncome.BorderBrush = (Brush)bc.ConvertFrom("blue");
             btnIncome.BorderThickness = new Thickness(1);
             btnExpenses.BorderBrush = (Brush)bc.ConvertFrom("blue");

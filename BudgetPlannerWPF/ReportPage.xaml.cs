@@ -17,9 +17,7 @@ using System.Windows.Shapes;
 
 namespace BudgetPlannerWPF
 {
-    /// <summary>
-    /// Interaction logic for ReportPage.xaml
-    /// </summary>
+    
     public partial class ReportPage : Page
     {
         static List<string> reportList = new List<string>();
@@ -69,20 +67,14 @@ namespace BudgetPlannerWPF
                 allExpenses.AddRange(MainWindow.hl.namedExpenses);
                 allExpenses.Add(new KeyValuePair<decimal, string>(MainWindow.hl.MonthlyRepayment, "Home Loan Repayments: "));
             }
-            /* Sorting code from:
-             * https://stackoverflow.com/questions/14544953/c-sharp-sorting-a-listkeyvaluepairint-string
-             * User answered:
-             * https://stackoverflow.com/users/69083/guffa
-             * Accessed 3 June 2022*/
+            
             allExpenses.Sort((x, y) => y.Key.CompareTo(x.Key));
             foreach (var expense in allExpenses)
             {
                 reportList.Add(expense.Value + Expense.FormatPrice(expense.Key));
             }
 
-            /* Conditional operator
-             * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator
-             * Accessed 3 June 2022*/
+            
             if (MainWindow.r != null)
             {
                 availRent = MainWindow.r.AvailableMoney;

@@ -7,7 +7,7 @@
         #endregion
 
         #region Methods
-        public Rent(decimal rAmount, decimal gIncome, decimal tDeduct, decimal groceries, decimal waterLights, decimal travel, decimal phone, decimal other) : base(gIncome, tDeduct, groceries, waterLights, travel, phone, other)
+        public Rent(decimal rAmount, decimal gIncome, decimal tDeduct, decimal f, decimal c, decimal t, decimal u, decimal e) : base(gIncome, tDeduct, f, c, t, u, e)
         {
             RentalAmount = rAmount;
             AvailableMoney = CalculateAvailable();

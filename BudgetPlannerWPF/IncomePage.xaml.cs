@@ -15,22 +15,20 @@ using System.Windows.Shapes;
 
 namespace BudgetPlannerWPF
 {
-    /// <summary>
-    /// Interaction logic for IncomePage.xaml
-    /// </summary>
+    
     public partial class IncomePage : Page
     {
 
         public IncomePage()
         {
             InitializeComponent();
-            //Populate text boxes with any previously entered data
+            //Populate text fields with any previously supplied data
             if (MainWindow.gIncome != 0 && MainWindow.tDeduct != 0)
             {
                 txbGrossIncome.Text = "" + MainWindow.gIncome;
                 txbTax.Text = "" + MainWindow.tDeduct;
             }
-            //Change selection color of button
+            //Change  color of button
             var window = (MainWindow)Application.Current.MainWindow;
             window.ResetSelections();
             window.btnIncome.BorderBrush = (Brush)MainWindow.bc.ConvertFrom("#FF84A8FF");
@@ -88,11 +86,7 @@ namespace BudgetPlannerWPF
             }
             else
             {
-                /* Brush Colour from:
-                * https://stackoverflow.com/questions/979876/set-background-color-of-wpf-textbox-in-c-sharp-code
-                * User answered:
-                * https://stackoverflow.com/users/703717/danield
-                * Accessed 29 June 2022*/
+              
                 window.btnIncome.Background = (Brush)MainWindow.bc.ConvertFrom("#FFFF7F7F");
                 window.btnExpenses.IsEnabled = false;
                 window.btnHome.IsEnabled = false;

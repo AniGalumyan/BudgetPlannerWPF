@@ -12,7 +12,8 @@
         public decimal Interest
         {
             get => interest;
-            //Ask for interest as percentage, convert to decimal for calculations
+            //Prompt for interest rate as a percentage and convert it to decimal format for computations.
+
             set => interest = value / 100;
         }
         public decimal Insurance { get; set; }
@@ -30,9 +31,7 @@
         public decimal CalculateVehicleExpense()
         {
             decimal vExpense;
-            /* Calculation from:
-             * https://www.siyavula.com/read/maths/grade-10/finance-and-growth/09-finance-and-growth-03
-             * Accessed 10 May 2022 */
+            
             vExpense = (Price + Deposit) ;
 
             return vExpense;

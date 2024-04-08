@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 
 namespace BudgetPlannerWPF
 {
-    /// <summary>
-    /// Interaction logic for LoanPage.xaml
-    /// </summary>
+    
     public partial class LoanPage : Page
     {
         public LoanPage()
         {
             InitializeComponent();
-            //Populate text boxes with any previously entered data
+            //Populate text fields with any previously supplied data
             if (MainWindow.pPrice != 0 && MainWindow.deposit != 0 && MainWindow.interest != 0 && MainWindow.rMonths != 0)
             {
                 txbPropertyPurchase.Text = "" + MainWindow.pPrice;
@@ -32,7 +30,7 @@ namespace BudgetPlannerWPF
                 txbInterest.Text = "" + MainWindow.interest;
                 txbRepayMonths.Text = "" + MainWindow.rMonths;
             }
-            //Change selection color of button
+            //Change  color of button
             var window = (MainWindow)Application.Current.MainWindow;
             window.ResetSelections();
             window.btnHome.BorderBrush = (Brush)MainWindow.bc.ConvertFrom("#FF84A8FF");
@@ -43,7 +41,7 @@ namespace BudgetPlannerWPF
         {
             var window = (MainWindow)Application.Current.MainWindow;
             bool valid = true;
-            //Makes sure expenseTotal doesn't compound if you repeatedly click submit
+            // expenseTotal doesn't compound if you repeatedly click submit
             decimal repay = 0;
             if (MainWindow.hl != null)
             {
@@ -125,11 +123,7 @@ namespace BudgetPlannerWPF
             }
             else
             {
-                /* Brush Colour from:
-                * https://stackoverflow.com/questions/979876/set-background-color-of-wpf-textbox-in-c-sharp-code
-                * User answered:
-                * https://stackoverflow.com/users/703717/danield
-                * Accessed 29 June 2022*/
+               
                 window.btnHome.Background = (Brush)MainWindow.bc.ConvertFrom("#FFFF7F7F");
                 window.btnVehicle.IsEnabled = false;
                 window.btnReport.IsEnabled = false;
